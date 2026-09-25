@@ -1,26 +1,33 @@
-from pathlib import Path
-import zipfile, textwrap
-
-root = Path("/mnt/data/romance_royal_luxury_store")
-assets = root / "assets"
-root.mkdir(exist_ok=True)
-assets.mkdir(exist_ok=True)
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ROMANCE ROYAL — Premium Lingerie</title>
-  <meta name="description" content="Romance Royal — Premium lingerie, fantasy wear, nightwear and shapewear.">
+
+  <meta name="description"
+    content="Romance Royal — Premium women's lingerie, fantasy wear, nightwear, bras, panties, shapewear, bodysuits and crop tops.">
+
+  <meta name="theme-color" content="#8f0717">
+  <meta name="color-scheme" content="light">
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- ================= HEADER ================= -->
+
   <header class="site-header">
+
     <div class="header-inner">
-      <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+
+      <button
+        class="mobile-menu-btn"
+        aria-label="Open menu">
+        ☰
+      </button>
 
       <a class="brand" href="#home">
         <span class="brand-main">ROMANCE</span>
@@ -36,700 +43,797 @@ html = r'''<!DOCTYPE html>
       </nav>
 
       <div class="header-actions">
-        <button aria-label="Search" id="searchBtn">⌕</button>
-        <button aria-label="Wishlist">♡</button>
-        <button aria-label="Account">♙</button>
-        <button aria-label="Cart" id="cartBtn" class="cart-btn">🛒 <span id="cartCount">0</span></button>
+
+        <button
+          aria-label="Search"
+          id="searchBtn">
+          ⌕
+        </button>
+
+        <button aria-label="Wishlist">
+          ♡
+        </button>
+
+        <button aria-label="Account">
+          ♙
+        </button>
+
+        <button
+          aria-label="Cart"
+          id="cartBtn"
+          class="cart-btn">
+
+          🛒
+
+          <span id="cartCount">0</span>
+
+        </button>
+
       </div>
+
     </div>
+
   </header>
 
+
   <!-- ================= HERO ================= -->
+
   <main id="home">
 
     <section class="hero">
-      <img src="assets/hero.jpg" alt="Romance Royal hero image" class="hero-image">
+
+      <img
+        src="assets/hero.jpg"
+        alt="Romance Royal premium lingerie"
+        class="hero-image"
+        fetchpriority="high"
+        decoding="async">
+
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <p class="eyebrow">PREMIUM LINGERIE & FANTASY WEAR</p>
-        <h1>ROMANCE<br><span>ROYAL</span></h1>
-        <p class="hero-script">Wear Your Confidence<br>Feel Like Royal</p>
-        <a href="#shop" class="btn btn-primary">SHOP NOW <span>→</span></a>
+
+        <p class="eyebrow">
+          PREMIUM LINGERIE & FANTASY WEAR
+        </p>
+
+        <h1>
+          ROMANCE
+          <br>
+          <span>ROYAL</span>
+        </h1>
+
+        <p class="hero-script">
+          Wear Your Confidence
+          <br>
+          Feel Like Royal
+        </p>
+
+        <a
+          href="#shop"
+          class="btn btn-primary">
+
+          SHOP NOW
+
+          <span>→</span>
+
+        </a>
+
       </div>
+
 
       <div class="hero-features">
-        <div><span>♕</span><b>Premium Quality</b></div>
-        <div><span>♧</span><b>Discreet Shipping</b></div>
-        <div><span>♡</span><b>Secure Payment</b></div>
-        <div><span>◌</span><b>24/7 Support</b></div>
+
+        <div>
+          <span>♕</span>
+          <b>Premium Quality</b>
+        </div>
+
+        <div>
+          <span>♧</span>
+          <b>Discreet Shipping</b>
+        </div>
+
+        <div>
+          <span>♡</span>
+          <b>Secure Payment</b>
+        </div>
+
+        <div>
+          <span>◌</span>
+          <b>24/7 Support</b>
+        </div>
+
       </div>
+
     </section>
+
 
     <!-- ================= CATEGORIES ================= -->
-    <section class="categories" id="collections">
+
+    <section
+      class="categories"
+      id="collections">
+
       <div class="category-card">
-        <img src="assets/category-lingerie.jpg" alt="Lingerie">
-        <div><strong>Lingerie</strong><small>Bra & Panty</small></div>
+
+        <img
+          src="assets/category-lingerie.jpg"
+          alt="Lingerie"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Lingerie</strong>
+          <small>Bra & Panty</small>
+        </div>
+
       </div>
+
+
       <div class="category-card">
-        <img src="assets/category-fantasy.jpg" alt="Fantasy Wear">
-        <div><strong>Fantasy Wear</strong><small>Costumes</small></div>
+
+        <img
+          src="assets/category-fantasy.jpg"
+          alt="Fantasy Wear"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Fantasy Wear</strong>
+          <small>Costumes</small>
+        </div>
+
       </div>
+
+
       <div class="category-card">
-        <img src="assets/category-nightwear.jpg" alt="Nightwear">
-        <div><strong>Nightwear</strong><small>Sleepwear</small></div>
+
+        <img
+          src="assets/category-nightwear.jpg"
+          alt="Nightwear"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Nightwear</strong>
+          <small>Sleepwear</small>
+        </div>
+
       </div>
+
+
       <div class="category-card">
-        <img src="assets/category-shapewear.jpg" alt="Shapewear">
-        <div><strong>Shapewear</strong><small>Body Shaper</small></div>
+
+        <img
+          src="assets/category-shapewear.jpg"
+          alt="Shapewear"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Shapewear</strong>
+          <small>Body Shaper</small>
+        </div>
+
       </div>
+
+
       <div class="category-card">
-        <img src="assets/category-bodysuit.jpg" alt="Bodysuit">
-        <div><strong>Bodysuit</strong><small>One Piece</small></div>
+
+        <img
+          src="assets/category-bodysuit.jpg"
+          alt="Bodysuit"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Bodysuit</strong>
+          <small>One Piece</small>
+        </div>
+
       </div>
+
+
       <div class="category-card">
-        <img src="assets/category-crop.jpg" alt="Crop Top">
-        <div><strong>Crop & Top</strong><small>Bra Tops</small></div>
+
+        <img
+          src="assets/category-crop.jpg"
+          alt="Crop Top"
+          loading="lazy"
+          decoding="async">
+
+        <div>
+          <strong>Crop & Top</strong>
+          <small>Bra Tops</small>
+        </div>
+
       </div>
+
     </section>
+
 
     <!-- ================= COLLECTION BANNER ================= -->
+
     <section class="collection-banner">
-      <img src="assets/collection-banner.jpg" alt="Luxury lingerie collection">
+
+      <img
+        src="assets/collection-banner.jpg"
+        alt="Luxury lingerie collection"
+        loading="lazy"
+        decoding="async">
+
       <div class="collection-overlay"></div>
+
       <div class="collection-content">
-        <p class="eyebrow">NEW COLLECTION</p>
-        <h2>LUXURY LINGERIE</h2>
-        <p>Discover our collection of premium lingerie, fantasy wear, nightwear and more. Designed for women who know what they want.</p>
-        <a href="#shop" class="btn btn-outline">EXPLORE COLLECTION</a>
+
+        <p class="eyebrow">
+          NEW COLLECTION
+        </p>
+
+        <h2>
+          LUXURY LINGERIE
+        </h2>
+
+        <p>
+          Discover our collection of premium lingerie,
+          fantasy wear, nightwear and more.
+          Designed for women who know what they want.
+        </p>
+
+        <a
+          href="#shop"
+          class="btn btn-outline">
+
+          EXPLORE COLLECTION
+
+        </a>
+
       </div>
+
     </section>
 
+
     <!-- ================= PRODUCTS ================= -->
-    <section class="products-section" id="shop">
+
+    <section
+      class="products-section"
+      id="shop">
+
       <div class="section-heading">
-        <p class="eyebrow">FEATURED PRODUCTS</p>
-        <h2>Most Loved by Our Queens</h2>
-        <div class="heading-line"><span>♡</span></div>
+
+        <p class="eyebrow">
+          FEATURED PRODUCTS
+        </p>
+
+        <h2>
+          Most Loved by Our Queens
+        </h2>
+
+        <div class="heading-line">
+          <span>♡</span>
+        </div>
+
       </div>
+
 
       <div class="products-grid">
 
-        <article class="product-card" data-name="Lace Bra & Panty Set" data-price="49.00" data-image="assets/product-1.jpg">
+
+        <!-- PRODUCT 1 -->
+
+        <article
+          class="product-card"
+          data-name="Lace Bra & Panty Set"
+          data-price="49.00"
+          data-image="assets/product-1.jpg">
+
           <div class="product-image">
-            <img src="assets/product-1.jpg" alt="Lace Bra & Panty Set">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-1.jpg"
+              alt="Lace Bra & Panty Set"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Lace Bra & Panty Set</h3>
-            <span>$49.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Lace Bra & Panty Set
+            </h3>
+
+            <span>
+              $49.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
-        <article class="product-card" data-name="Fantasy Nurse Costume" data-price="76.00" data-image="assets/product-2.jpg">
+
+        <!-- PRODUCT 2 -->
+
+        <article
+          class="product-card"
+          data-name="Fantasy Nurse Costume"
+          data-price="76.00"
+          data-image="assets/product-2.jpg">
+
           <div class="product-image">
-            <img src="assets/product-2.jpg" alt="Fantasy Nurse Costume">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-2.jpg"
+              alt="Fantasy Nurse Costume"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Fantasy Nurse Costume</h3>
-            <span>$76.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Fantasy Nurse Costume
+            </h3>
+
+            <span>
+              $76.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
-        <article class="product-card" data-name="Silk Nightgown" data-price="58.00" data-image="assets/product-3.jpg">
+
+        <!-- PRODUCT 3 -->
+
+        <article
+          class="product-card"
+          data-name="Silk Nightgown"
+          data-price="58.00"
+          data-image="assets/product-3.jpg">
+
           <div class="product-image">
-            <img src="assets/product-3.jpg" alt="Silk Nightgown">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-3.jpg"
+              alt="Silk Nightgown"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Silk Nightgown</h3>
-            <span>$58.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Silk Nightgown
+            </h3>
+
+            <span>
+              $58.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
-        <article class="product-card" data-name="Waist Trainer Shapewear" data-price="62.00" data-image="assets/product-4.jpg">
+
+        <!-- PRODUCT 4 -->
+
+        <article
+          class="product-card"
+          data-name="Waist Trainer Shapewear"
+          data-price="62.00"
+          data-image="assets/product-4.jpg">
+
           <div class="product-image">
-            <img src="assets/product-4.jpg" alt="Waist Trainer Shapewear">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-4.jpg"
+              alt="Waist Trainer Shapewear"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Waist Trainer Shapewear</h3>
-            <span>$62.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Waist Trainer Shapewear
+            </h3>
+
+            <span>
+              $62.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
-        <article class="product-card" data-name="Bodysuit Lingerie" data-price="54.00" data-image="assets/product-5.jpg">
+
+        <!-- PRODUCT 5 -->
+
+        <article
+          class="product-card"
+          data-name="Bodysuit Lingerie"
+          data-price="54.00"
+          data-image="assets/product-5.jpg">
+
           <div class="product-image">
-            <img src="assets/product-5.jpg" alt="Bodysuit Lingerie">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-5.jpg"
+              alt="Bodysuit Lingerie"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Bodysuit Lingerie</h3>
-            <span>$54.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Bodysuit Lingerie
+            </h3>
+
+            <span>
+              $54.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
-        <article class="product-card" data-name="Crop Top Set" data-price="42.00" data-image="assets/product-6.jpg">
+
+        <!-- PRODUCT 6 -->
+
+        <article
+          class="product-card"
+          data-name="Crop Top Set"
+          data-price="42.00"
+          data-image="assets/product-6.jpg">
+
           <div class="product-image">
-            <img src="assets/product-6.jpg" alt="Crop Top Set">
-            <button class="wishlist">♡</button>
+
+            <img
+              src="assets/product-6.jpg"
+              alt="Crop Top Set"
+              loading="lazy"
+              decoding="async">
+
+            <button class="wishlist">
+              ♡
+            </button>
+
           </div>
+
           <div class="product-info">
-            <h3>Crop Top Set</h3>
-            <span>$42.00</span>
-            <button class="add-cart">ADD TO CART</button>
+
+            <h3>
+              Crop Top Set
+            </h3>
+
+            <span>
+              $42.00
+            </span>
+
+            <button class="add-cart">
+              ADD TO CART
+            </button>
+
           </div>
+
         </article>
 
       </div>
+
     </section>
 
-    <!-- ================= EDITORIAL BANNER ================= -->
+
+    <!-- ================= EDITORIAL ================= -->
+
     <section class="editorial">
-      <img src="assets/editorial.jpg" alt="Romance Royal editorial">
+
+      <img
+        src="assets/editorial.jpg"
+        alt="Romance Royal editorial"
+        loading="lazy"
+        decoding="async">
+
       <div class="editorial-overlay"></div>
+
       <div class="editorial-content">
-        <p>BE BOLD. BE YOU.</p>
-        <h2>Luxury in Every Detail</h2>
-        <a href="#shop" class="btn btn-outline">SHOP NOW</a>
+
+        <p>
+          BE BOLD. BE YOU.
+        </p>
+
+        <h2>
+          Luxury in Every Detail
+        </h2>
+
+        <a
+          href="#shop"
+          class="btn btn-outline">
+
+          SHOP NOW
+
+        </a>
+
       </div>
+
     </section>
+
 
     <!-- ================= ABOUT ================= -->
-    <section class="about-section" id="about">
+
+    <section
+      class="about-section"
+      id="about">
+
       <div>
-        <p class="eyebrow">THE ROYAL STANDARD</p>
-        <h2>Made to make you feel royal.</h2>
+
+        <p class="eyebrow">
+          THE ROYAL STANDARD
+        </p>
+
+        <h2>
+          Made to make you feel royal.
+        </h2>
+
       </div>
+
       <p>
-        Romance Royal brings together elegant lingerie, fantasy wear, nightwear,
-        bras, panties, shapewear, bodysuits and crop tops in one refined collection.
-        Every detail is selected to create a confident, luxurious experience.
+        Romance Royal brings together elegant lingerie,
+        fantasy wear, nightwear, bras, panties,
+        shapewear, bodysuits and crop tops in one
+        refined collection. Every detail is selected
+        to create a confident, luxurious experience.
       </p>
+
     </section>
 
   </main>
 
+
   <!-- ================= FOOTER ================= -->
+
   <footer id="contact">
+
     <div class="footer-brand">
-      <div class="brand-main">ROMANCE</div>
-      <div class="brand-sub">♛ ROYAL ♛</div>
-      <small>PREMIUM LINGERIE</small>
+
+      <div class="brand-main">
+        ROMANCE
+      </div>
+
+      <div class="brand-sub">
+        ♛ ROYAL ♛
+      </div>
+
+      <small>
+        PREMIUM LINGERIE
+      </small>
+
     </div>
 
+
     <div>
-      <h4>Quick Links</h4>
+
+      <h4>
+        Quick Links
+      </h4>
+
       <a href="#home">Home</a>
       <a href="#shop">Shop</a>
       <a href="#collections">Collections</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+
     </div>
 
-    <div>
-      <h4>Customer Care</h4>
-      <a href="#">Shipping & Returns</a>
-      <a href="#">Size Guide</a>
-      <a href="#">FAQ</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms & Conditions</a>
-    </div>
 
     <div>
-      <h4>Follow Us</h4>
+
+      <h4>
+        Customer Care
+      </h4>
+
+      <a href="#">
+        Shipping & Returns
+      </a>
+
+      <a href="#">
+        Size Guide
+      </a>
+
+      <a href="#">
+        FAQ
+      </a>
+
+      <a href="#">
+        Privacy Policy
+      </a>
+
+      <a href="#">
+        Terms & Conditions
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Follow Us
+      </h4>
+
       <div class="socials">
-        <a href="#">◎</a><a href="#">◉</a><a href="#">♪</a><a href="#">P</a>
+        <a href="#">◎</a>
+        <a href="#">◉</a>
+        <a href="#">♪</a>
+        <a href="#">P</a>
       </div>
-      <p class="instagram">@romanceroyal.shop</p>
+
+      <p class="instagram">
+        @romanceroyal.shop
+      </p>
+
     </div>
+
 
     <div class="newsletter">
-      <h4>Join Our Royal Family</h4>
-      <p>Get exclusive offers & early access.</p>
+
+      <h4>
+        Join Our Royal Family
+      </h4>
+
+      <p>
+        Get exclusive offers & early access.
+      </p>
+
       <div class="newsletter-form">
-        <input type="email" placeholder="Your email address">
-        <button>Subscribe</button>
+
+        <input
+          type="email"
+          placeholder="Your email address">
+
+        <button>
+          Subscribe
+        </button>
+
       </div>
+
     </div>
 
-    <div class="copyright">© 2026 ROMANCE ROYAL. All Rights Reserved.</div>
+
+    <div class="copyright">
+      © 2026 ROMANCE ROYAL. All Rights Reserved.
+    </div>
+
   </footer>
 
-  <!-- ================= CART DRAWER ================= -->
-  <aside class="cart-drawer" id="cartDrawer">
-    <div class="drawer-header">
-      <h2>Your Cart</h2>
-      <button id="closeCart">×</button>
-    </div>
-    <div id="cartItems" class="cart-items">
-      <p class="empty-cart">Your cart is empty.</p>
-    </div>
-    <div class="cart-summary">
-      <div><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
-      <button class="btn btn-primary full">PROCEED TO CHECKOUT</button>
-      <a href="#shop">Continue Shopping</a>
-    </div>
-  </aside>
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-  <!-- ================= SEARCH ================= -->
-  <div class="search-panel" id="searchPanel">
-    <button id="closeSearch">×</button>
-    <input id="searchInput" type="search" placeholder="Search products...">
-    <p>Try: lingerie, nightwear, bodysuit, shapewear</p>
+  <!-- ================= CART DRAWER ================= -->
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer">
+
+    <div class="drawer-header">
+
+      <h2>
+        Your Cart
+      </h2>
+
+      <button id="closeCart">
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      id="cartItems"
+      class="cart-items">
+
+      <p class="empty-cart">
+        Your cart is empty.
+      </p>
+
+    </div>
+
+
+    <div class="cart-summary">
+
+      <div>
+        <span>Subtotal</span>
+        <strong id="cartTotal">
+          $0.00
+        </strong>
+      </div>
+
+      <button class="btn btn-primary full">
+        PROCEED TO CHECKOUT
+      </button>
+
+      <a href="#shop">
+        Continue Shopping
+      </a>
+
+    </div>
+
+  </aside>
+
+
+  <div
+    class="drawer-backdrop"
+    id="drawerBackdrop">
   </div>
 
+
+  <!-- ================= SEARCH ================= -->
+
+  <div
+    class="search-panel"
+    id="searchPanel">
+
+    <button id="closeSearch">
+      ×
+    </button>
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Search products...">
+
+    <p>
+      Try: lingerie, nightwear, bodysuit, shapewear
+    </p>
+
+  </div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
-'''
-
-css = r''':root{
-  --cherry:#8f0717;
-  --cherry-dark:#56040d;
-  --cherry-soft:#b0182d;
-  --cream:#fffaf7;
-  --black:#0d0b0b;
-  --black-2:#171313;
-  --gold:#c7a15a;
-  --gold-light:#ead29b;
-  --line:#ded3cc;
-  --text:#211b1b;
-  --muted:#776b68;
-  --white:#fff;
-  --shadow:0 20px 50px rgba(30,0,0,.12);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Georgia,"Times New Roman",serif;
-  color:var(--text);
-  background:var(--cream);
-}
-button,input{font:inherit}
-button{cursor:pointer}
-a{text-decoration:none;color:inherit}
-
-.site-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,250,247,.96);
-  border-bottom:1px solid rgba(143,7,23,.12);
-  backdrop-filter:blur(15px);
-}
-.header-inner{
-  max-width:1440px;margin:auto;min-height:76px;padding:0 34px;
-  display:flex;align-items:center;justify-content:space-between;gap:28px;
-}
-.brand{display:flex;flex-direction:column;align-items:center;line-height:1}
-.brand-main{font-size:28px;letter-spacing:3px;font-weight:500}
-.brand-sub{font-size:13px;letter-spacing:5px;color:var(--cherry);margin-top:6px}
-.main-nav{display:flex;gap:34px;font-size:14px}
-.main-nav a{position:relative;padding:8px 0}
-.main-nav a:after{
-  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
-  background:var(--cherry);transition:.3s;
-}
-.main-nav a:hover:after{width:100%}
-.header-actions{display:flex;align-items:center;gap:13px}
-.header-actions button,.mobile-menu-btn{
-  border:0;background:transparent;font-size:20px;color:#302727;
-}
-.cart-btn{position:relative}
-#cartCount{
-  position:absolute;right:-9px;top:-8px;width:17px;height:17px;border-radius:50%;
-  display:grid;place-items:center;background:var(--cherry);color:white;font:10px Arial;
-}
-.mobile-menu-btn{display:none}
-
-.hero{
-  min-height:670px;position:relative;overflow:hidden;background:#160506;color:white;
-}
-.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(10,2,3,.84) 0%,rgba(10,2,3,.48) 48%,rgba(10,2,3,.15) 100%);
-}
-.hero-content{position:relative;z-index:2;max-width:650px;padding:130px 8% 70px}
-.eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);font-weight:bold}
-.hero h1{font-size:78px;line-height:.86;letter-spacing:7px;font-weight:400;margin:22px 0}
-.hero h1 span{font-size:54px;letter-spacing:13px;margin-left:82px}
-.hero-script{font-family:"Brush Script MT","Segoe Script",cursive;font-size:38px;line-height:1.2;margin:18px 0 34px;color:#fff}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:16px;
-  min-height:50px;padding:0 30px;border:1px solid transparent;
-  font-size:12px;letter-spacing:2px;font-weight:bold;transition:.25s;
-}
-.btn-primary{background:var(--cherry);color:white}
-.btn-primary:hover{background:#b50c23;transform:translateY(-2px)}
-.btn-outline{border-color:var(--gold);color:white;background:transparent}
-.btn-outline:hover{background:var(--gold);color:#1a1010}
-.hero-features{
-  position:absolute;right:6%;bottom:60px;z-index:2;display:grid;gap:22px;
-}
-.hero-features div{display:flex;align-items:center;gap:12px;font-size:12px}
-.hero-features span{color:var(--gold);font-size:22px}
-
-.categories{
-  max-width:1440px;margin:auto;padding:22px 28px;
-  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;background:#fff;
-}
-.category-card{position:relative;aspect-ratio:1/1.02;overflow:hidden;background:#eee}
-.category-card img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.category-card:hover img{transform:scale(1.05)}
-.category-card:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.7))}
-.category-card div{position:absolute;z-index:2;bottom:14px;left:14px;color:#fff}
-.category-card strong{display:block;font-size:16px}
-.category-card small{font:11px Arial;color:#f1e6e1}
-
-.collection-banner,.editorial{
-  position:relative;min-height:430px;overflow:hidden;background:#180405;color:#fff;
-}
-.collection-banner img,.editorial img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.collection-overlay,.editorial-overlay{
-  position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,1,3,.86),rgba(20,1,3,.18))
-}
-.collection-content{
-  position:relative;z-index:2;max-width:550px;padding:90px 8%;
-}
-.collection-content h2{font-size:52px;font-weight:400;letter-spacing:4px;margin:12px 0 18px}
-.collection-content p:not(.eyebrow){font:14px/1.7 Arial;max-width:470px;margin-bottom:25px}
-
-.products-section{padding:85px 5%;background:#fff}
-.section-heading{text-align:center;margin-bottom:42px}
-.section-heading h2{font-size:30px;font-weight:400;margin-top:8px}
-.heading-line{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--cherry);margin-top:12px}
-.heading-line:before,.heading-line:after{content:"";height:1px;width:70px;background:#c8b7b0}
-.products-grid{
-  max-width:1350px;margin:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:18px;
-}
-.product-card{min-width:0}
-.product-image{position:relative;aspect-ratio:4/5;background:#f2e8e4;overflow:hidden}
-.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.product-card:hover .product-image img{transform:scale(1.04)}
-.wishlist{
-  position:absolute;right:11px;top:11px;width:34px;height:34px;border-radius:50%;
-  border:0;background:rgba(255,255,255,.9);font-size:20px;color:#4b1a1f
-}
-.product-info{text-align:center;padding:15px 4px}
-.product-info h3{font-size:15px;font-weight:400;min-height:38px}
-.product-info span{display:block;margin:8px 0;font-size:14px;color:var(--cherry)}
-.add-cart{
-  border:0;background:none;color:#5a4542;font-size:10px;letter-spacing:1.5px;
-  border-bottom:1px solid var(--gold);padding-bottom:4px;
-}
-.add-cart:hover{color:var(--cherry)}
-
-.editorial{min-height:350px}
-.editorial-content{position:relative;z-index:2;text-align:center;padding:105px 20px}
-.editorial-content p{font-size:12px;letter-spacing:4px}
-.editorial-content h2{font-family:"Brush Script MT","Segoe Script",cursive;font-size:54px;font-weight:400;margin:10px 0 24px}
-
-.about-section{
-  max-width:1100px;margin:auto;padding:85px 30px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center
-}
-.about-section h2{font-size:42px;font-weight:400;margin-top:14px}
-.about-section>p{font:15px/2 Arial;color:#655957}
-
-footer{
-  background:#100b0b;color:#e8ded9;padding:65px 5% 25px;
-  display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr 1.5fr;gap:40px;position:relative
-}
-footer .brand-main{font-size:25px}
-footer .brand-sub{color:#e0b9a0}
-footer small{display:block;margin-top:9px;color:#a9958d;letter-spacing:2px}
-footer h4{color:var(--gold-light);font-size:12px;letter-spacing:2px;margin-bottom:17px}
-footer>div:not(.copyright):not(.footer-brand) a{display:block;font:12px Arial;color:#b9aaa5;margin:11px 0}
-.socials{display:flex;gap:12px}.socials a{font-size:20px!important}
-.instagram{font:11px Arial;color:#b9aaa5;margin-top:15px}
-.newsletter p{font:12px Arial;color:#a9958d;margin-bottom:14px}
-.newsletter-form{display:flex;border:1px solid #4b3a36}
-.newsletter-form input{flex:1;min-width:0;border:0;background:transparent;color:white;padding:12px}
-.newsletter-form button{border:0;background:var(--cherry);color:#fff;padding:0 13px;font-size:11px}
-.copyright{
-  grid-column:1/-1;border-top:1px solid #302421;padding-top:20px;margin-top:10px;
-  font:10px Arial;color:#776864;text-align:center
-}
-
-.cart-drawer{
-  position:fixed;right:-430px;top:0;width:min(430px,100%);height:100vh;background:#fff;z-index:100;
-  transition:.35s;box-shadow:-20px 0 60px rgba(0,0,0,.18);display:flex;flex-direction:column
-}
-.cart-drawer.open{right:0}
-.drawer-backdrop{
-  position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90;opacity:0;pointer-events:none;transition:.3s
-}
-.drawer-backdrop.open{opacity:1;pointer-events:auto}
-.drawer-header{display:flex;justify-content:space-between;padding:24px;border-bottom:1px solid #eee}
-.drawer-header h2{font-weight:400}
-.drawer-header button{border:0;background:none;font-size:28px}
-.cart-items{padding:20px;overflow:auto;flex:1}
-.empty-cart{text-align:center;color:#887c78;padding-top:60px}
-.cart-item{display:grid;grid-template-columns:75px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}
-.cart-item img{width:75px;height:90px;object-fit:cover}
-.cart-item h4{font-weight:400;font-size:14px}
-.cart-item p{font:12px Arial;color:var(--cherry);margin-top:7px}
-.remove-item{border:0;background:none;color:#999}
-.cart-summary{padding:22px;border-top:1px solid #eee}
-.cart-summary>div{display:flex;justify-content:space-between;margin-bottom:17px;font:13px Arial}
-.full{width:100%}
-.cart-summary>a{display:block;text-align:center;font:12px Arial;margin-top:15px;color:#76605a}
-
-.search-panel{
-  position:fixed;z-index:110;left:50%;top:0;transform:translate(-50%,-120%);
-  width:min(800px,92%);background:#fff;padding:35px;box-shadow:var(--shadow);transition:.35s
-}
-.search-panel.open{transform:translate(-50%,20px)}
-.search-panel button{position:absolute;right:16px;top:10px;border:0;background:none;font-size:25px}
-.search-panel input{width:100%;border:0;border-bottom:1px solid var(--cherry);outline:0;padding:15px 0;font-size:22px}
-.search-panel p{font:12px Arial;color:#8a7c78;margin-top:12px}
-
-@media(max-width:1100px){
-  .main-nav{gap:18px}
-  .products-grid{grid-template-columns:repeat(3,1fr)}
-  .categories{grid-template-columns:repeat(3,1fr)}
-  footer{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:760px){
-  .header-inner{min-height:64px;padding:0 16px}
-  .mobile-menu-btn{display:block}
-  .main-nav{display:none}
-  .brand-main{font-size:21px}
-  .brand-sub{font-size:9px;letter-spacing:3px}
-  .header-actions{gap:8px}.header-actions button{font-size:17px}
-  .hero{min-height:620px}
-  .hero-content{padding:95px 24px 40px;text-align:left}
-  .hero h1{font-size:52px}.hero h1 span{font-size:37px;margin-left:38px}
-  .hero-script{font-size:29px}
-  .hero-features{display:none}
-  .categories{grid-template-columns:repeat(2,1fr);padding:8px}
-  .collection-content{padding:75px 25px}
-  .collection-content h2{font-size:38px}
-  .products-section{padding:60px 14px}
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .product-info h3{font-size:13px}
-  .about-section{grid-template-columns:1fr;gap:25px;padding:60px 25px}
-  .about-section h2{font-size:34px}
-  footer{grid-template-columns:1fr 1fr;padding:55px 25px 25px}
-  footer .footer-brand,.newsletter,.copyright{grid-column:1/-1}
-}
-@media(max-width:430px){
-  .hero-content{padding-top:80px}
-  .hero h1{font-size:43px}.hero h1 span{font-size:30px;margin-left:25px}
-  .hero-script{font-size:25px}
-  .products-grid{gap:9px}
-  .category-card strong{font-size:14px}
-}
-'''
-
-js = r'''const cartDrawer = document.getElementById("cartDrawer");
-const drawerBackdrop = document.getElementById("drawerBackdrop");
-const cartBtn = document.getElementById("cartBtn");
-const closeCart = document.getElementById("closeCart");
-const cartItemsEl = document.getElementById("cartItems");
-const cartCountEl = document.getElementById("cartCount");
-const cartTotalEl = document.getElementById("cartTotal");
-
-let cart = JSON.parse(localStorage.getItem("romanceRoyalCart") || "[]");
-
-function saveCart(){
-  localStorage.setItem("romanceRoyalCart", JSON.stringify(cart));
-  renderCart();
-}
-
-function openCart(){
-  cartDrawer.classList.add("open");
-  drawerBackdrop.classList.add("open");
-}
-function hideCart(){
-  cartDrawer.classList.remove("open");
-  drawerBackdrop.classList.remove("open");
-}
-
-cartBtn.addEventListener("click", openCart);
-closeCart.addEventListener("click", hideCart);
-drawerBackdrop.addEventListener("click", hideCart);
-
-document.querySelectorAll(".add-cart").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    const card = btn.closest(".product-card");
-    const item = {
-      name: card.dataset.name,
-      price: Number(card.dataset.price),
-      image: card.dataset.image,
-      qty: 1
-    };
-    const existing = cart.find(x=>x.name===item.name);
-    if(existing) existing.qty++;
-    else cart.push(item);
-    saveCart();
-    openCart();
-  });
-});
-
-function renderCart(){
-  const count = cart.reduce((s,x)=>s+x.qty,0);
-  cartCountEl.textContent = count;
-
-  if(!cart.length){
-    cartItemsEl.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
-    cartTotalEl.textContent = "$0.00";
-    return;
-  }
-
-  let total = 0;
-  cartItemsEl.innerHTML = cart.map((item,index)=>{
-    total += item.price * item.qty;
-    return `
-      <div class="cart-item">
-        <img src="${item.image}" alt="">
-        <div>
-          <h4>${item.name}</h4>
-          <p>$${item.price.toFixed(2)} × ${item.qty}</p>
-        </div>
-        <button class="remove-item" data-index="${index}">×</button>
-      </div>
-    `;
-  }).join("");
-
-  cartTotalEl.textContent = "$" + total.toFixed(2);
-
-  document.querySelectorAll(".remove-item").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      cart.splice(Number(btn.dataset.index),1);
-      saveCart();
-    });
-  });
-}
-
-renderCart();
-
-/* Search */
-const searchPanel = document.getElementById("searchPanel");
-const searchBtn = document.getElementById("searchBtn");
-const closeSearch = document.getElementById("closeSearch");
-searchBtn.addEventListener("click", ()=>{
-  searchPanel.classList.add("open");
-  setTimeout(()=>document.getElementById("searchInput").focus(),200);
-});
-closeSearch.addEventListener("click", ()=>searchPanel.classList.remove("open"));
-
-/* Wishlist visual */
-document.querySelectorAll(".wishlist").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    btn.textContent = btn.textContent === "♡" ? "♥" : "♡";
-    btn.style.color = btn.textContent === "♥" ? "#8f0717" : "#4b1a1f";
-  });
-});
-
-/* Smooth category links */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener("click", ()=>{
-    const target = document.querySelector(a.getAttribute("href"));
-    if(target) target.scrollIntoView({behavior:"smooth"});
-  });
-});
-'''
-
-readme = r'''# ROMANCE ROYAL — Luxury Store Demo
-
-This is a responsive HTML/CSS/JS storefront matching the Romance Royal luxury visual direction.
-
-## Replace the image placeholders
-
-Put your own images inside `/assets/` using these exact filenames:
-
-- hero.jpg
-- category-lingerie.jpg
-- category-fantasy.jpg
-- category-nightwear.jpg
-- category-shapewear.jpg
-- category-bodysuit.jpg
-- category-crop.jpg
-- collection-banner.jpg
-- product-1.jpg
-- product-2.jpg
-- product-3.jpg
-- product-4.jpg
-- product-5.jpg
-- product-6.jpg
-- editorial.jpg
-
-No code changes are required if you keep those filenames.
-
-## Run
-
-Open `index.html` directly in a browser, or use VS Code Live Server.
-
-## Included
-
-- Luxury responsive homepage
-- Desktop + mobile layout
-- Header/navigation
-- Hero section
-- Product categories
-- Collection banner
-- Featured product cards
-- Wishlist visual interaction
-- Working cart drawer with localStorage
-- Search panel
-- Editorial banner
-- About section
-- Footer/newsletter
-'''
-
-for path, content in [
-    (root/"index.html", html),
-    (root/"styles.css", css),
-    (root/"script.js", js),
-    (root/"README.txt", readme),
-]:
-    path.write_text(content, encoding="utf-8")
-
-# Simple SVG placeholders so the project renders immediately.
-placeholders = {
-    "hero.jpg":"HERO",
-    "category-lingerie.jpg":"LINGERIE",
-    "category-fantasy.jpg":"FANTASY",
-    "category-nightwear.jpg":"NIGHTWEAR",
-    "category-shapewear.jpg":"SHAPEWEAR",
-    "category-bodysuit.jpg":"BODYSUIT",
-    "category-crop.jpg":"CROP & TOP",
-    "collection-banner.jpg":"LUXURY COLLECTION",
-    "product-1.jpg":"PRODUCT 01",
-    "product-2.jpg":"PRODUCT 02",
-    "product-3.jpg":"PRODUCT 03",
-    "product-4.jpg":"PRODUCT 04",
-    "product-5.jpg":"PRODUCT 05",
-    "product-6.jpg":"PRODUCT 06",
-    "editorial.jpg":"EDITORIAL",
-}
-# SVG content saved with .svg and corresponding html references can be changed later.
-# Instead create a tiny JPEG-like? We leave the exact requested filenames as instructions;
-# browser will show alt until real images are added.
-# Create an assets/IMAGE_SLOTS.txt to make replacement obvious.
-(assets/"IMAGE_SLOTS.txt").write_text(
-    "Replace these image slots with your own JPG/WEBP files using the exact names referenced in index.html.\n\n"
-    + "\n".join(placeholders.keys()), encoding="utf-8"
-)
-
-zip_path = Path("/mnt/data/romance_royal_luxury_store.zip")
-with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    for p in root.rglob("*"):
-        if p.is_file():
-            z.write(p, p.relative_to(root.parent))
-
-print(f"Project created: {zip_path}")
-print("Files:")
-for p in root.rglob("*"):
-    if p.is_file():
-        print(" -", p.relative_to(root))
-
