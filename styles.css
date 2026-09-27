@@ -1,22 +1,28 @@
+/* =========================================================
+   ROMANCE ROYAL
+   Luxury Cherry Red / Black / White
+   Responsive GitHub Pages Version
+========================================================= */
+
 :root {
   --cherry: #8f0717;
   --cherry-dark: #56040d;
   --cherry-soft: #b0182d;
 
   --cream: #fffaf7;
+  --white: #ffffff;
+
   --black: #0d0b0b;
   --black-2: #171313;
 
   --gold: #c7a15a;
   --gold-light: #ead29b;
 
-  --line: #ded3cc;
   --text: #211b1b;
   --muted: #776b68;
+  --line: #ded3cc;
 
-  --white: #ffffff;
-
-  --shadow: 0 20px 50px rgba(30, 0, 0, 0.12);
+  --shadow: 0 15px 40px rgba(30, 0, 0, 0.10);
 }
 
 
@@ -31,24 +37,25 @@
 }
 
 html {
-  scroll-behavior: smooth;
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
 
-  font-family: Georgia, "Times New Roman", serif;
-
-  color: var(--text);
   background: var(--cream);
+  color: var(--text);
+
+  font-family: Georgia, "Times New Roman", serif;
 
   overflow-x: hidden;
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -62,8 +69,8 @@ button {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 
@@ -88,12 +95,12 @@ a {
 
 .header-inner {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1400px;
 
-  min-height: 76px;
+  min-height: 74px;
 
   margin: 0 auto;
-  padding: 0 34px;
+  padding: 0 30px;
 
   display: flex;
   align-items: center;
@@ -103,46 +110,53 @@ a {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .brand {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  line-height: 1;
-
   flex-shrink: 0;
+
+  line-height: 1;
 }
 
 .brand-main {
   font-size: 28px;
-  letter-spacing: 3px;
   font-weight: 500;
+
+  letter-spacing: 3px;
 }
 
 .brand-sub {
   margin-top: 6px;
 
-  font-size: 13px;
-  letter-spacing: 5px;
-
   color: var(--cherry);
+
+  font-size: 12px;
+  letter-spacing: 4px;
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
 
-  font-size: 14px;
+  gap: 32px;
+
+  font-size: 13px;
 }
 
 .main-nav a {
   position: relative;
+
   padding: 8px 0;
 }
 
@@ -167,23 +181,28 @@ a {
 }
 
 
-/* HEADER ACTIONS */
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
 
 .header-actions {
   display: flex;
   align-items: center;
 
   gap: 13px;
+
+  flex-shrink: 0;
 }
 
 .header-actions button,
 .mobile-menu-btn {
   border: 0;
+
   background: transparent;
 
-  font-size: 20px;
-
   color: #302727;
+
+  font-size: 19px;
 }
 
 .cart-btn {
@@ -193,21 +212,22 @@ a {
 #cartCount {
   position: absolute;
 
-  right: -9px;
-  top: -8px;
+  top: -7px;
+  right: -8px;
 
   width: 17px;
   height: 17px;
 
-  border-radius: 50%;
-
   display: grid;
   place-items: center;
+
+  border-radius: 50%;
 
   background: var(--cherry);
   color: white;
 
-  font: 10px Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
 }
 
 .mobile-menu-btn {
@@ -217,46 +237,41 @@ a {
 
 /* =========================================================
    HERO
+   Full image — no crop
 ========================================================= */
 
 .hero {
-  position: relative;
-
   width: 100%;
+  max-width: 1380px;
+
+  margin: 0 auto;
 
   overflow: hidden;
 
   background: #160506;
 
-  color: white;
-
   line-height: 0;
 }
-
-
-/*
-   IMPORTANT:
-   The image itself contains the text/design.
-   Therefore we DO NOT overlay HTML text.
-*/
 
 .hero-image {
   display: block;
 
   width: 100%;
-  height: auto;
+  height: auto !important;
 
   max-width: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  margin: 0 auto;
 
-  margin: 0;
-  padding: 0;
+  object-fit: contain !important;
+  object-position: center;
 }
 
 
-/* Disable old overlays */
+/*
+  Text is already part of the generated image.
+  Hide possible HTML overlays.
+*/
 
 .hero-overlay,
 .hero-content,
@@ -266,124 +281,64 @@ a {
 
 
 /* =========================================================
-   GENERAL BUTTONS
+   CATEGORIES
 ========================================================= */
 
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: 4px;
+.categories {
+  width: 94%;
+  max-width: 1280px;
 
-  color: var(--gold);
+  margin: 0 auto;
 
-  font-weight: bold;
-}
+  padding: 18px 0;
 
-.btn {
-  display: inline-flex;
+  display: grid;
 
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 
-  gap: 16px;
-
-  min-height: 50px;
-
-  padding: 0 30px;
-
-  border: 1px solid transparent;
-
-  font-size: 12px;
-  letter-spacing: 2px;
-
-  font-weight: bold;
-
-  transition: 0.25s ease;
-}
-
-.btn-primary {
-  background: var(--cherry);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #b50c23;
-
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border-color: var(--gold);
-
-  color: white;
+  gap: 9px;
 
   background: transparent;
 }
 
-.btn-outline:hover {
-  background: var(--gold);
-  color: #1a1010;
-}
-
-
-/* =========================================================
-   CATEGORY SECTION
-========================================================= */
-
-.categories {
-  width: 100%;
-  max-width: 1440px;
-
-  margin: 0 auto;
-
-  padding: 22px 28px;
-
-  display: grid;
-
-  grid-template-columns: repeat(6, 1fr);
-
-  gap: 10px;
-
-  background: #ffffff;
-}
-
 .category-card {
-  position: relative;
+  min-width: 0;
 
   overflow: hidden;
 
-  background: #eee;
+  background: white;
 
-  min-width: 0;
+  border: 1px solid rgba(143, 7, 23, 0.08);
+
+  box-shadow: 0 5px 18px rgba(30, 0, 0, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+.category-card:hover {
+  transform: translateY(-3px);
 
-/*
-   CATEGORY IMAGE
-   Full image — no cropping.
-*/
+  box-shadow: 0 12px 28px rgba(30, 0, 0, 0.12);
+}
 
 .category-card img {
   display: block;
 
   width: 100%;
-  height: auto;
+  height: auto !important;
 
   max-width: 100%;
 
-  object-fit: contain;
+  object-fit: contain !important;
 
-  transition: transform 0.5s ease;
-}
-
-.category-card:hover img {
-  transform: scale(1.03);
+  margin: 0;
 }
 
 
 /*
-   IMPORTANT:
-   Category names are already written inside
-   the image design, so hide the HTML labels.
+  Category names are already inside images.
 */
 
 .category-card > div {
@@ -397,49 +352,44 @@ a {
 
 /* =========================================================
    COLLECTION BANNER
+   Delicate / 88% desktop
 ========================================================= */
 
 .collection-banner {
-  position: relative;
+  width: 88%;
+  max-width: 1180px;
 
-  width: 100%;
+  margin: 28px auto;
 
   overflow: hidden;
 
   background: #180405;
 
-  color: #fff;
+  border-radius: 2px;
 
   line-height: 0;
+
+  box-shadow: var(--shadow);
 }
-
-
-/*
-   Full image.
-   No fixed height.
-   No cover.
-   No cropping.
-*/
 
 .collection-banner img {
   display: block;
 
-  position: relative;
-
   width: 100%;
-  height: auto;
+  height: auto !important;
 
   max-width: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  margin: 0 auto;
 
-  margin: 0;
-  padding: 0;
+  object-fit: contain !important;
+  object-position: center;
 }
 
 
-/* Disable old HTML overlays */
+/*
+  Hide HTML overlay text if old CSS/HTML has it.
+*/
 
 .collection-overlay,
 .collection-content {
@@ -454,23 +404,31 @@ a {
 .products-section {
   width: 100%;
 
-  padding: 85px 5%;
+  padding: 65px 5%;
 
-  background: #ffffff;
+  background: var(--white);
 }
 
 .section-heading {
-  text-align: center;
+  margin-bottom: 40px;
 
-  margin-bottom: 42px;
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 4px;
 }
 
 .section-heading h2 {
-  font-size: 30px;
-
-  font-weight: 400;
-
   margin-top: 8px;
+
+  font-size: 29px;
+  font-weight: 400;
 }
 
 .heading-line {
@@ -481,36 +439,37 @@ a {
 
   gap: 12px;
 
-  color: var(--cherry);
-
   margin-top: 12px;
+
+  color: var(--cherry);
 }
 
 .heading-line::before,
 .heading-line::after {
   content: "";
 
-  height: 1px;
-
   width: 70px;
+  height: 1px;
 
   background: #c8b7b0;
 }
 
 
-/* PRODUCTS GRID */
+/* =========================================================
+   PRODUCTS GRID
+========================================================= */
 
 .products-grid {
   width: 100%;
-  max-width: 1350px;
+  max-width: 1250px;
 
   margin: 0 auto;
 
   display: grid;
 
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 
-  gap: 18px;
+  gap: 14px;
 }
 
 .product-card {
@@ -520,7 +479,9 @@ a {
 }
 
 
-/* PRODUCT IMAGE */
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
 
 .product-image {
   position: relative;
@@ -529,90 +490,93 @@ a {
 
   overflow: hidden;
 
-  background: #f2e8e4;
+  background: #f5eeeb;
 }
 
 .product-image img {
   display: block;
 
   width: 100%;
-  height: auto;
+  height: auto !important;
 
   max-width: 100%;
 
-  object-fit: contain;
+  object-fit: contain !important;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.45s ease;
 }
 
 .product-card:hover .product-image img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 
-/* WISHLIST */
+/* =========================================================
+   WISHLIST
+========================================================= */
 
 .wishlist {
   position: absolute;
 
-  right: 11px;
-  top: 11px;
+  top: 10px;
+  right: 10px;
 
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 
-  border-radius: 50%;
+  display: grid;
+  place-items: center;
 
   border: 0;
+  border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.9);
-
-  font-size: 20px;
+  background: rgba(255, 255, 255, 0.92);
 
   color: #4b1a1f;
+
+  font-size: 18px;
 }
 
 
-/* PRODUCT INFORMATION */
+/* =========================================================
+   PRODUCT INFO
+========================================================= */
 
 .product-info {
-  text-align: center;
+  padding: 14px 4px;
 
-  padding: 15px 4px;
+  text-align: center;
 }
 
 .product-info h3 {
-  font-size: 15px;
+  min-height: 36px;
 
+  font-size: 14px;
   font-weight: 400;
-
-  min-height: 38px;
 }
 
 .product-info span {
   display: block;
 
-  margin: 8px 0;
-
-  font-size: 14px;
+  margin: 7px 0;
 
   color: var(--cherry);
+
+  font-size: 13px;
 }
 
 .add-cart {
   border: 0;
+  border-bottom: 1px solid var(--gold);
 
-  background: none;
+  background: transparent;
+
+  padding-bottom: 4px;
 
   color: #5a4542;
 
-  font-size: 10px;
-
+  font-size: 9px;
   letter-spacing: 1.5px;
-
-  border-bottom: 1px solid var(--gold);
-
-  padding-bottom: 4px;
 }
 
 .add-cart:hover {
@@ -622,46 +586,44 @@ a {
 
 /* =========================================================
    EDITORIAL
+   Delicate / 88% desktop
 ========================================================= */
 
 .editorial {
-  position: relative;
+  width: 88%;
+  max-width: 1180px;
 
-  width: 100%;
+  margin: 25px auto 35px;
 
   overflow: hidden;
 
-  background: #180405;
+  background: #130304;
 
-  color: #fff;
+  border-radius: 2px;
 
   line-height: 0;
+
+  box-shadow: 0 15px 40px rgba(40, 0, 0, 0.10);
 }
-
-
-/*
-   FULL EDITORIAL IMAGE
-*/
 
 .editorial img {
   display: block;
 
-  position: relative;
-
   width: 100%;
-  height: auto;
+  height: auto !important;
 
   max-width: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  margin: 0 auto;
 
-  margin: 0;
-  padding: 0;
+  object-fit: contain !important;
+  object-position: center;
 }
 
 
-/* Disable old overlay/content */
+/*
+  Hide HTML overlay if present.
+*/
 
 .editorial-overlay,
 .editorial-content {
@@ -675,33 +637,35 @@ a {
 
 .about-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1050px;
 
   margin: 0 auto;
 
-  padding: 85px 30px;
+  padding: 75px 30px;
 
   display: grid;
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 80px;
+  gap: 70px;
 
   align-items: center;
 }
 
 .about-section h2 {
-  font-size: 42px;
+  margin-top: 13px;
 
+  font-size: 40px;
   font-weight: 400;
-
-  margin-top: 14px;
 }
 
 .about-section > p {
-  font: 15px/2 Arial, sans-serif;
-
   color: #655957;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+  line-height: 2;
 }
 
 
@@ -710,13 +674,11 @@ a {
 ========================================================= */
 
 footer {
+  position: relative;
+
   width: 100%;
 
-  background: #100b0b;
-
-  color: #e8ded9;
-
-  padding: 65px 5% 25px;
+  padding: 60px 5% 25px;
 
   display: grid;
 
@@ -727,9 +689,11 @@ footer {
     1fr
     1.5fr;
 
-  gap: 40px;
+  gap: 35px;
 
-  position: relative;
+  background: #100b0b;
+
+  color: #e8ded9;
 }
 
 footer .brand-main {
@@ -747,27 +711,29 @@ footer small {
 
   color: #a9958d;
 
+  font-size: 9px;
   letter-spacing: 2px;
 }
 
 footer h4 {
+  margin-bottom: 16px;
+
   color: var(--gold-light);
 
-  font-size: 12px;
-
+  font-size: 11px;
   letter-spacing: 2px;
-
-  margin-bottom: 17px;
 }
 
 footer > div:not(.copyright):not(.footer-brand) a {
   display: block;
 
-  font: 12px Arial, sans-serif;
+  margin: 10px 0;
 
   color: #b9aaa5;
 
-  margin: 11px 0;
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
 }
 
 .socials {
@@ -777,23 +743,27 @@ footer > div:not(.copyright):not(.footer-brand) a {
 }
 
 .socials a {
-  font-size: 20px !important;
+  font-size: 18px !important;
 }
 
 .instagram {
-  font: 11px Arial, sans-serif;
+  margin-top: 13px;
 
   color: #b9aaa5;
 
-  margin-top: 15px;
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
 }
 
 .newsletter p {
-  font: 12px Arial, sans-serif;
+  margin-bottom: 13px;
 
   color: #a9958d;
 
-  margin-bottom: 14px;
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
 }
 
 .newsletter-form {
@@ -808,42 +778,42 @@ footer > div:not(.copyright):not(.footer-brand) a {
   min-width: 0;
 
   border: 0;
+  outline: 0;
+
+  padding: 11px;
 
   background: transparent;
 
   color: white;
-
-  padding: 12px;
-
-  outline: none;
 }
 
 .newsletter-form button {
   border: 0;
 
-  background: var(--cherry);
-
-  color: #fff;
-
   padding: 0 13px;
 
-  font-size: 11px;
+  background: var(--cherry);
+
+  color: white;
+
+  font-size: 10px;
 }
 
 .copyright {
   grid-column: 1 / -1;
 
-  border-top: 1px solid #302421;
-
-  padding-top: 20px;
-
   margin-top: 10px;
+  padding-top: 18px;
 
-  font: 10px Arial, sans-serif;
+  border-top: 1px solid #302421;
 
   color: #776864;
 
   text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
 }
 
 
@@ -854,24 +824,22 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .cart-drawer {
   position: fixed;
 
-  right: -430px;
   top: 0;
-
-  width: min(430px, 100%);
-
-  height: 100vh;
-
-  background: #fff;
+  right: -430px;
 
   z-index: 100;
 
-  transition: right 0.35s ease;
+  width: min(430px, 100%);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
 
   box-shadow: -20px 0 60px rgba(0, 0, 0, 0.18);
 
-  display: flex;
-
-  flex-direction: column;
+  transition: right 0.35s ease;
 }
 
 .cart-drawer.open {
@@ -883,9 +851,9 @@ footer > div:not(.copyright):not(.footer-brand) a {
 
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.45);
-
   z-index: 90;
+
+  background: rgba(0, 0, 0, 0.45);
 
   opacity: 0;
 
@@ -903,9 +871,10 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .drawer-header {
   display: flex;
 
+  align-items: center;
   justify-content: space-between;
 
-  padding: 24px;
+  padding: 23px;
 
   border-bottom: 1px solid #eee;
 }
@@ -917,25 +886,25 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .drawer-header button {
   border: 0;
 
-  background: none;
+  background: transparent;
 
   font-size: 28px;
 }
 
 .cart-items {
+  flex: 1;
+
   padding: 20px;
 
   overflow: auto;
-
-  flex: 1;
 }
 
 .empty-cart {
-  text-align: center;
+  padding-top: 60px;
 
   color: #887c78;
 
-  padding-top: 60px;
+  text-align: center;
 }
 
 .cart-item {
@@ -960,23 +929,24 @@ footer > div:not(.copyright):not(.footer-brand) a {
 }
 
 .cart-item h4 {
-  font-weight: 400;
-
   font-size: 14px;
+  font-weight: 400;
 }
 
 .cart-item p {
-  font: 12px Arial, sans-serif;
+  margin-top: 7px;
 
   color: var(--cherry);
 
-  margin-top: 7px;
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
 }
 
 .remove-item {
   border: 0;
 
-  background: none;
+  background: transparent;
 
   color: #999;
 }
@@ -989,12 +959,13 @@ footer > div:not(.copyright):not(.footer-brand) a {
 
 .cart-summary > div {
   display: flex;
-
   justify-content: space-between;
 
   margin-bottom: 17px;
 
-  font: 13px Arial, sans-serif;
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
 }
 
 .full {
@@ -1004,37 +975,39 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .cart-summary > a {
   display: block;
 
-  text-align: center;
-
-  font: 12px Arial, sans-serif;
-
   margin-top: 15px;
 
   color: #76605a;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
 }
 
 
 /* =========================================================
-   SEARCH
+   SEARCH PANEL
 ========================================================= */
 
 .search-panel {
   position: fixed;
 
-  z-index: 110;
-
-  left: 50%;
   top: 0;
+  left: 50%;
 
-  transform: translate(-50%, -120%);
+  z-index: 110;
 
   width: min(800px, 92%);
 
-  background: #fff;
-
   padding: 35px;
 
+  background: #ffffff;
+
   box-shadow: var(--shadow);
+
+  transform: translate(-50%, -120%);
 
   transition: transform 0.35s ease;
 }
@@ -1046,12 +1019,12 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .search-panel button {
   position: absolute;
 
-  right: 16px;
   top: 10px;
+  right: 16px;
 
   border: 0;
 
-  background: none;
+  background: transparent;
 
   font-size: 25px;
 }
@@ -1059,23 +1032,24 @@ footer > div:not(.copyright):not(.footer-brand) a {
 .search-panel input {
   width: 100%;
 
-  border: 0;
+  padding: 15px 0;
 
+  border: 0;
   border-bottom: 1px solid var(--cherry);
 
   outline: 0;
-
-  padding: 15px 0;
 
   font-size: 22px;
 }
 
 .search-panel p {
-  font: 12px Arial, sans-serif;
+  margin-top: 12px;
 
   color: #8a7c78;
 
-  margin-top: 12px;
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
 }
 
 
@@ -1085,22 +1059,25 @@ footer > div:not(.copyright):not(.footer-brand) a {
 
 @media (max-width: 1100px) {
 
+  .header-inner {
+    padding: 0 22px;
+  }
+
   .main-nav {
     gap: 18px;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .categories {
-    grid-template-columns: repeat(3, 1fr);
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   footer {
     grid-template-columns: repeat(3, 1fr);
   }
-
 }
 
 
@@ -1119,17 +1096,15 @@ footer > div:not(.copyright):not(.footer-brand) a {
   /* HEADER */
 
   .header-inner {
-    min-height: 64px;
+    min-height: 63px;
 
-    padding: 0 16px;
+    padding: 0 13px;
 
-    gap: 10px;
+    gap: 9px;
   }
 
   .mobile-menu-btn {
     display: block;
-
-    flex-shrink: 0;
   }
 
   .main-nav {
@@ -1143,279 +1118,213 @@ footer > div:not(.copyright):not(.footer-brand) a {
   }
 
   .brand-main {
-    font-size: 21px;
+    font-size: 20px;
 
     letter-spacing: 2px;
   }
 
   .brand-sub {
-    font-size: 9px;
+    margin-top: 4px;
+
+    font-size: 8px;
 
     letter-spacing: 3px;
-
-    margin-top: 5px;
   }
 
   .header-actions {
-    gap: 8px;
-
-    flex-shrink: 0;
+    gap: 7px;
   }
 
   .header-actions button {
-    font-size: 17px;
+    font-size: 16px;
   }
 
 
-  /* =====================================================
-     HERO MOBILE
-  ===================================================== */
+  /* HERO */
 
   .hero {
     width: 100%;
+    max-width: 100%;
 
-    min-height: 0;
-
-    height: auto;
+    margin: 0;
 
     overflow: hidden;
   }
 
   .hero-image {
-    display: block;
+    width: 100% !important;
+    height: auto !important;
 
-    width: 100%;
-    height: auto;
-
-    min-width: 100%;
     max-width: 100%;
 
-    object-fit: contain;
-
-    object-position: center;
-
-    margin: 0;
-    padding: 0;
+    object-fit: contain !important;
   }
 
 
-  /* =====================================================
-     CATEGORIES MOBILE
-  ===================================================== */
+  /* CATEGORIES */
 
   .categories {
-    width: 100%;
+    width: 94%;
 
-    padding: 8px;
+    margin: 0 auto;
 
-    display: grid;
+    padding: 10px 0;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 8px;
-
-    background: #fff;
+    gap: 7px;
   }
 
   .category-card {
     width: 100%;
 
-    overflow: hidden;
+    min-width: 0;
   }
 
   .category-card img {
-    display: block;
-
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
 
     max-width: 100%;
 
-    object-fit: contain;
-  }
-
-  .category-card > div {
-    display: none !important;
+    object-fit: contain !important;
   }
 
 
-  /* =====================================================
-     COLLECTION MOBILE
-  ===================================================== */
+  /* COLLECTION */
 
   .collection-banner {
-    width: 100%;
+    width: 94% !important;
+    max-width: 94% !important;
 
-    height: auto;
+    margin: 18px auto !important;
 
-    min-height: 0;
-
-    overflow: hidden;
-
-    line-height: 0;
+    border-radius: 2px;
   }
 
   .collection-banner img {
-    display: block;
+    width: 100% !important;
+    height: auto !important;
 
-    width: 100%;
-    height: auto;
-
-    min-width: 100%;
     max-width: 100%;
 
-    object-fit: contain;
-
-    object-position: center;
-
-    margin: 0;
-    padding: 0;
+    object-fit: contain !important;
   }
 
 
-  /* =====================================================
-     PRODUCTS MOBILE
-  ===================================================== */
+  /* PRODUCTS */
 
   .products-section {
-    width: 100%;
-
-    padding: 60px 14px;
+    padding: 50px 12px;
   }
 
   .section-heading {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
   .section-heading h2 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .products-grid {
-    width: 100%;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 10px;
   }
 
   .product-card {
-    width: 100%;
-
     min-width: 0;
   }
 
   .product-image {
     width: 100%;
-
     height: auto;
 
     overflow: hidden;
   }
 
   .product-image img {
-    display: block;
-
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
 
     max-width: 100%;
 
-    object-fit: contain;
+    object-fit: contain !important;
   }
 
   .product-info {
-    padding: 12px 3px;
+    padding: 11px 3px;
   }
 
   .product-info h3 {
-    font-size: 13px;
-
     min-height: 34px;
+
+    font-size: 12px;
   }
 
   .product-info span {
-    font-size: 13px;
-
     margin: 6px 0;
+
+    font-size: 12px;
   }
 
   .wishlist {
-    width: 30px;
-    height: 30px;
-
-    right: 7px;
     top: 7px;
+    right: 7px;
 
-    font-size: 17px;
+    width: 29px;
+    height: 29px;
+
+    font-size: 16px;
   }
 
 
-  /* =====================================================
-     EDITORIAL MOBILE
-  ===================================================== */
+  /* EDITORIAL */
 
   .editorial {
-    width: 100%;
+    width: 94% !important;
+    max-width: 94% !important;
 
-    height: auto;
+    margin: 18px auto 25px !important;
 
-    min-height: 0;
-
-    overflow: hidden;
-
-    line-height: 0;
+    border-radius: 2px;
   }
 
   .editorial img {
-    display: block;
+    width: 100% !important;
+    height: auto !important;
 
-    width: 100%;
-    height: auto;
-
-    min-width: 100%;
     max-width: 100%;
 
-    object-fit: contain;
-
-    object-position: center;
-
-    margin: 0;
-    padding: 0;
+    object-fit: contain !important;
   }
 
 
-  /* =====================================================
-     ABOUT MOBILE
-  ===================================================== */
+  /* ABOUT */
 
   .about-section {
     width: 100%;
 
+    padding: 60px 25px;
+
     grid-template-columns: 1fr;
 
     gap: 25px;
-
-    padding: 60px 25px;
   }
 
   .about-section h2 {
-    font-size: 34px;
+    font-size: 33px;
   }
 
 
-  /* =====================================================
-     FOOTER MOBILE
-  ===================================================== */
+  /* FOOTER */
 
   footer {
-    width: 100%;
-
     grid-template-columns: 1fr 1fr;
 
-    padding: 55px 25px 25px;
+    padding: 50px 22px 25px;
 
-    gap: 30px 20px;
+    gap: 30px 18px;
   }
 
   footer .footer-brand,
@@ -1423,7 +1332,6 @@ footer > div:not(.copyright):not(.footer-brand) a {
   footer .copyright {
     grid-column: 1 / -1;
   }
-
 }
 
 
@@ -1434,34 +1342,46 @@ footer > div:not(.copyright):not(.footer-brand) a {
 @media (max-width: 430px) {
 
   .header-inner {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 
   .brand-main {
-    font-size: 18px;
+    font-size: 17px;
 
     letter-spacing: 1.5px;
   }
 
   .brand-sub {
-    font-size: 8px;
+    font-size: 7px;
 
     letter-spacing: 2px;
   }
 
   .header-actions {
-    gap: 6px;
+    gap: 5px;
   }
 
   .header-actions button {
-    font-size: 15px;
+    font-size: 14px;
   }
 
 
   .categories {
-    padding: 6px;
+    width: 92%;
 
     gap: 6px;
+  }
+
+
+  .collection-banner {
+    width: 92% !important;
+    max-width: 92% !important;
+  }
+
+
+  .editorial {
+    width: 92% !important;
+    max-width: 92% !important;
   }
 
 
@@ -1471,15 +1391,15 @@ footer > div:not(.copyright):not(.footer-brand) a {
   }
 
   .products-grid {
-    gap: 9px;
+    gap: 8px;
   }
 
   .product-info h3 {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .product-info span {
-    font-size: 12px;
+    font-size: 11px;
   }
 
 
@@ -1495,29 +1415,20 @@ footer > div:not(.copyright):not(.footer-brand) a {
   footer .copyright {
     grid-column: 1;
   }
-
 }
 
 
 /* =========================================================
-   EXTRA MOBILE IMAGE PROTECTION
+   IMAGE PROTECTION
+   Prevent old CSS from cropping generated images
 ========================================================= */
 
-/*
-   Prevents browser/CSS rules from forcing
-   fixed heights on the main website images.
-*/
-
-@media (max-width: 760px) {
-
-  .hero-image,
-  .collection-banner img,
-  .editorial img,
-  .category-card img,
-  .product-image img {
-    height: auto !important;
-  }
-
+.hero-image,
+.collection-banner img,
+.editorial img,
+.category-card img,
+.product-image img {
+  height: auto !important;
 }
 
 
@@ -1529,255 +1440,5 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible {
   outline: 2px solid var(--cherry);
-
   outline-offset: 3px;
-}
-/* =========================================================
-   ROMANCE ROYAL — REFINED LUXURY SIZING
-   Elegant / Slim / Editorial
-========================================================= */
-
-/* HERO — کمی ظریف‌تر و کنترل‌شده‌تر */
-
-.hero {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  background: #160506;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-
-/* =========================================================
-   CATEGORY CARDS
-========================================================= */
-
-.categories {
-  width: 94%;
-  max-width: 1280px;
-
-  margin: 0 auto;
-
-  padding: 18px 0;
-
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-
-  gap: 8px;
-
-  background: transparent;
-}
-
-.category-card {
-  background: #fff;
-
-  border: 1px solid rgba(143, 7, 23, 0.08);
-
-  box-shadow: 0 5px 20px rgba(30, 0, 0, 0.06);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.category-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 12px 28px rgba(30, 0, 0, 0.11);
-}
-
-.category-card img {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  object-fit: contain;
-}
-
-
-/* =========================================================
-   COLLECTION BANNER
-========================================================= */
-
-.collection-banner {
-  width: 94%;
-  max-width: 1320px;
-
-  margin: 18px auto 0;
-
-  background: #180405;
-
-  overflow: hidden;
-
-  border-radius: 2px;
-
-  box-shadow: 0 12px 35px rgba(30, 0, 0, 0.10);
-}
-
-.collection-banner img {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  object-fit: contain;
-}
-
-
-/* =========================================================
-   FEATURED PRODUCTS
-========================================================= */
-
-.products-section {
-  padding-top: 65px;
-  padding-bottom: 65px;
-}
-
-.products-grid {
-  max-width: 1250px;
-
-  gap: 14px;
-}
-
-.product-image {
-  background: #f7f0ed;
-}
-
-.product-info h3 {
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   EDITORIAL BANNER
-========================================================= */
-
-.editorial {
-  width: 94%;
-  max-width: 1320px;
-
-  margin: 0 auto 15px;
-
-  overflow: hidden;
-
-  background: #130304;
-
-  border-radius: 2px;
-
-  box-shadow: 0 10px 30px rgba(30, 0, 0, 0.09);
-}
-
-.editorial img {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  object-fit: contain;
-}
-
-
-/* =========================================================
-   MOBILE — EVEN MORE DELICATE
-========================================================= */
-
-@media (max-width: 760px) {
-
-  .hero {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-  }
-
-  .hero-image {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-  }
-
-
-  .categories {
-    width: 94%;
-
-    padding: 10px 0;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 7px;
-  }
-
-  .category-card {
-    border-radius: 1px;
-  }
-
-
-  .collection-banner {
-    width: 94%;
-
-    margin: 14px auto 0;
-
-    border-radius: 2px;
-  }
-
-  .collection-banner img {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-  }
-
-
-  .products-section {
-    padding: 48px 12px;
-  }
-
-  .products-grid {
-    gap: 10px;
-  }
-
-
-  .editorial {
-    width: 94%;
-
-    margin: 0 auto 12px;
-
-    border-radius: 2px;
-  }
-
-  .editorial img {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .categories {
-    width: 92%;
-
-    gap: 6px;
-  }
-
-  .collection-banner,
-  .editorial {
-    width: 92%;
-  }
-
 }
